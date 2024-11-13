@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_question_bank_tree" model="ir.ui.view">
+        <field name="name">exam.question.tree</field>
+        <field name="model">exam.question</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+<!--                <field name="question_type"/>-->
+<!--                <field name="difficulty_level"/>-->
+<!--                <field name="theme_id"/>-->
+<!--                <field name="validation_status"/>-->
+<!--                <field name="ai_generated"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_question_bank_form" model="ir.ui.view">
+        <field name="name">exam.question.form</field>
+        <field name="model">exam.question</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+<!--                    <button name="action_approve" string="Approve" type="object"-->
+<!--                            attrs="{'invisible': [('validation_status', '!=', 'pending')]}"/>-->
+<!--                    <button name="action_reject" string="Reject" type="object"-->
+<!--                            attrs="{'invisible': [('validation_status', '!=', 'pending')]}"/>-->
+<!--                    <field name="validation_status" widget="statusbar"/>-->
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+<!--                            <field name="question_type"/>-->
+<!--                            <field name="difficulty_level"/>-->
+<!--                            <field name="theme_id"/>-->
+                        </group>
+                        <group>
+<!--                            <field name="ai_generated"/>-->
+<!--                            <field name="correct_answer" attrs="{'invisible': [('question_type', '=', 'mcq')]}"/>-->
+                        </group>
+                    </group>
+                    <notebook>
+<!--                        <page string="Options" attrs="{'invisible': [('question_type', '!=', 'mcq')]}">-->
+<!--&lt;!&ndash;                            <field name="option_ids">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <tree editable="bottom">&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="sequence" widget="handle"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <field name="is_correct"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </tree>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </field>&ndash;&gt;-->
+<!--                        </page>-->
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+<!--                    <field name="message_follower_ids"/>-->
+<!--                    <field name="message_ids"/>-->
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

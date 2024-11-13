@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_exam_result" model="ir.actions.report">
+        <field name="name">Exam Result</field>
+        <field name="model">exam.result</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">exam_management.report_exam_result</field>
+        <field name="report_file">exam_management.report_exam_result</field>
+        <field name="binding_model_id" ref="model_exam_result"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_exam_certificate" model="ir.actions.report">
+        <field name="name">Exam Certificate</field>
+        <field name="model">exam.result</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">exam_management.report_exam_certificate</field>
+        <field name="report_file">exam_management.report_exam_certificate</field>
+        <field name="binding_model_id" ref="model_exam_result"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

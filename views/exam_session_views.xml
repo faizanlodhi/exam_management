@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_exam_session_tree" model="ir.ui.view">
+        <field name="name">exam.session.tree</field>
+        <field name="model">exam.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="exam_id"/>
+                <field name="start_time"/>
+                <field name="end_time"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+<record id="view_exam_section_form" model="ir.ui.view">
+        <field name="name">exam.section.form</field>
+        <field name="model">exam.section</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="section_type"/>
+                        <field name="total_questions"/>
+                        <field name="correct_answers_required"/>
+                    </group>
+                    <notebook>
+                        <page string="Subsections" attrs="{'invisible': [('section_type', '!=', 'written_expr')]}">
+                            <field name="subsection_ids"/>
+                        </page>
+                        <page string="Audio" attrs="{'invisible': [('section_type', '!=', 'oral_comp')]}">
+                            <group>
+                                <field name="audio_file"/>
+                                <field name="audio_filename"/>
+                            </group>
+                        </page>
+                        <page string="Evaluation Criteria" attrs="{'invisible': [('section_type', '!=', 'oral_expr')]}">
+                            <field name="evaluation_criteria_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_exam_session" model="ir.actions.act_window">
+        <field name="name">Exam Sessions</field>
+        <field name="res_model">exam.session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_exam_session"
+              name="Exam Sessions"
+              action="action_exam_session"
+              sequence="30"/>
+</odoo>

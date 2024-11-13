@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Exam Sequence -->
+        <record id="seq_exam" model="ir.sequence">
+            <field name="name">Exam Sequence</field>
+            <field name="code">exam.exam</field>
+            <field name="prefix">EXAM/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>
+
+        <!-- Candidate Sequence -->
+        <record id="seq_candidate" model="ir.sequence">
+            <field name="name">Candidate Sequence</field>
+            <field name="code">exam.candidate</field>
+            <field name="prefix">CAND/%(year)s/</field>
+            <field name="padding">4</field>
+        </record>
+    </data>
+</odoo>

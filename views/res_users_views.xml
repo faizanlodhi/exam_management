@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_exam" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.exam</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='login']" position="after">
+                <field name="user_type" required="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

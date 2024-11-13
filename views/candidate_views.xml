@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Candidate Tree View -->
+    <record id="view_candidate_tree" model="ir.ui.view">
+        <field name="name">exam.candidate.tree</field>
+        <field name="model">exam.candidate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="registration_number"/>
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Candidate Form View -->
+    <record id="view_candidate_form" model="ir.ui.view">
+        <field name="name">exam.candidate.form</field>
+        <field name="model">exam.candidate</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="registration_number"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="email"/>
+                        </group>
+                        <group>
+                            <field name="phone"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Assigned Exams">
+                            <field name="exam_ids"/>
+                        </page>
+                        <page string="Results">
+                            <field name="result_ids" readonly="1">
+                                <tree>
+                                    <field name="exam_id"/>
+                                    <field name="score"/>
+                                    <field name="result"/>
+                                    <field name="exam_date"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Candidate Action -->
+    <record id="action_candidate" model="ir.actions.act_window">
+        <field name="name">Candidates</field>
+        <field name="res_model">exam.candidate</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="menu_candidate"
+              name="Candidates"
+              action="action_candidate"
+              parent="exam_management.menu_exam_root"
+              sequence="20"/>
+</odoo>

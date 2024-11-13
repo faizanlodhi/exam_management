@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_exam_root"
+              name="Examination"
+              sequence="10"/>
+
+    <!-- Sub Menus -->
+    <menuitem id="menu_exam_main"
+              name="Examinations"
+              parent="menu_exam_root"
+              sequence="10"/>
+
+    <menuitem id="menu_question_bank"
+              name="Question Bank"
+              parent="menu_exam_root"
+              sequence="20"/>
+
+    <menuitem id="menu_exam_configuration"
+              name="Configuration"
+              parent="menu_exam_root"
+              sequence="100"/>
+</odoo>

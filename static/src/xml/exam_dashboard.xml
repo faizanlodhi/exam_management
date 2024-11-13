@@ -1,0 +1,29 @@
+<template id="portal_exam_dashboard">
+    <t t-call="website.layout">
+        <div class="container">
+            <h2>Available Exams</h2>
+            <div class="row">
+                <t t-if="exams">
+                    <t t-foreach="exams" t-as="exam">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title"><t t-esc="exam.name"/></h5>
+                                    <a t-att-href="'/exam/start/%s' % exam.id" class="btn btn-primary">Start Exam</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+                <t t-else="">
+                    <div class="col-12 text-center">
+                        <div class="alert alert-info">
+                            <h4>No Exams Available</h4>
+                            <p>There are no exams created yet. Please check back later.</p>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+</template>

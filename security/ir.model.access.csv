@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_exam_user,exam.exam.user,model_exam_exam,group_exam_user,1,1,1,0
+access_exam_manager,exam.exam.manager,model_exam_exam,group_exam_manager,1,1,1,1
+access_exam_exam_candidate,exam.exam.candidate,model_exam_exam,base.group_user,1,0,0,0
+access_exam_question_user,exam.question.user,model_exam_question,group_exam_user,1,0,0,0
+access_exam_question_manager,exam.question.manager,model_exam_question,group_exam_manager,1,1,1,1
+access_exam_section_user,exam.section.user,model_exam_section,group_exam_user,1,1,1,0
+access_exam_section_manager,exam.section.manager,model_exam_section,group_exam_manager,1,1,1,1
+access_exam_instruction,exam.instruction,model_exam_instruction,group_exam_manager,1,1,1,1
